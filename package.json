@@ -4,6 +4,7 @@
   "description": "Schedule at a glance",
   "main": "app.js",
   "author": "Nillk",
+  "repository": "https://github.com/nillk/easy-schedule.git",
   "devDependencies": {
     "electron": "^1.6.8"
   }
