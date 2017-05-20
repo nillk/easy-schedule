@@ -1,0 +1,10 @@
+{
+  "name": "easy-schedule",
+  "version": "0.1.0",
+  "description": "Schedule at a glance",
+  "main": "app.js",
+  "author": "Nillk",
+  "devDependencies": {
+    "electron": "^1.6.8"
+  }
+}
