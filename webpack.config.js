@@ -5,16 +5,16 @@ module.exports = {
   entry: {
     app: [
       'webpack/hot/dev-server',
-      path.resolve(__dirname, 'src/entry.js')
+      path.join(__dirname, 'src/entry.js')
     ],
   },
   output: {
-    path: path.resolve(__dirname, 'public/built'),
+    path: path.join(__dirname, 'public/built'),
     filename: 'bundle.js',
     publicPath: 'http://localhost:8080/built/'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public')
   },
   module: {
     loaders: [
