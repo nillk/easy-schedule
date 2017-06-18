@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     app: [
       'webpack/hot/dev-server',
-      path.join(__dirname, 'src/entry.js')
+      path.join(__dirname, 'src/index.js')
     ],
   },
   output: {
