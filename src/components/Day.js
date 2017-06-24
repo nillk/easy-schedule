@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import Section from './Section';
 
-class Day extends React.Component {
+class Day extends Component {
+
   render() {
+    // TODO: split sections
     return (
-      <Section/>
+      <Section programs={this.props.sections} />
     )
   }
 }
