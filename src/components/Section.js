@@ -7,7 +7,7 @@ class Section extends Component {
     return (
       <div>
         {this.props.programs.map(p => (
-          <Program title={ p.title } runtime={ p.runtime } />
+          <Program info={ p } />
         ))}
       </div>
     )

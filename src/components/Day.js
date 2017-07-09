@@ -6,8 +6,17 @@ class Day extends Component {
 
   render() {
     // TODO: split sections
+    let sections = [];
+    for(var key in this.props.sections) {
+      if(this.props.sections.hasOwnProperty(key)) {
+        sections.push(<Section programs={this.props.sections[key]} />);
+      }
+    }
+
     return (
-      <Section programs={this.props.sections} />
+      <div>
+        { sections }
+      </div>
     )
   }
 }

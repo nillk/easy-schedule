@@ -4,9 +4,17 @@ import Day from '../components/Day';
 class TimeTable extends Component {
 
   render() {
-    // TODO: split programs
+    let days = [];
+    for(var key in this.props.programs) {
+      if(this.props.programs.hasOwnProperty(key)) {
+        days.push(<Day sections={this.props.programs[key]} />);
+      }
+    }
+
     return (
-      <Day sections={this.props.programs} />
+      <div>
+        { days }
+      </div>
     )
   }
 }
