@@ -5,7 +5,8 @@ class Section extends Component {
 
   render() {
     return (
-      <div>
+      <div className="section">
+        <h5>{this.props.section}</h5>
         {this.props.programs.map(p => (
           <Program info={ p } />
         ))}

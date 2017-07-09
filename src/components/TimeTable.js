@@ -7,12 +7,12 @@ class TimeTable extends Component {
     let days = [];
     for(var key in this.props.programs) {
       if(this.props.programs.hasOwnProperty(key)) {
-        days.push(<Day sections={this.props.programs[key]} />);
+        days.push(<Day day={key} sections={this.props.programs[key]} />);
       }
     }
 
     return (
-      <div>
+      <div className="timetable">
         { days }
       </div>
     )

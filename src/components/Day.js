@@ -5,16 +5,16 @@ import Section from './Section';
 class Day extends Component {
 
   render() {
-    // TODO: split sections
     let sections = [];
     for(var key in this.props.sections) {
       if(this.props.sections.hasOwnProperty(key)) {
-        sections.push(<Section programs={this.props.sections[key]} />);
+        sections.push(<Section section={key} programs={this.props.sections[key]} />);
       }
     }
 
     return (
-      <div>
+      <div className="day">
+        <h3>{this.props.day}</h3>
         { sections }
       </div>
     )
