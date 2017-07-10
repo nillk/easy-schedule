@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProgram } from '../actions';
+import Button from 'material-ui/Button';
 
 class AddProgram extends Component {
 
@@ -17,9 +18,9 @@ class AddProgram extends Component {
         <input type='number' ref='runtime' />
         <input type='date' ref='date' />
         <input type='text' ref='section' />
-        <button onClick={this.onAddProgram}>
+        <Button>
           Add
-        </button>
+        </Button>
       </div>
     );
   }

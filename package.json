@@ -24,9 +24,11 @@
   },
   "dependencies": {
     "electron": "^1.6.11",
+    "material-ui": "^1.0.0-alpha.21",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.0"
+    "redux": "^3.7.0",
+    "typeface-roboto": "0.0.31"
   }
 }
