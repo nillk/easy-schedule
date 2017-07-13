@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import Grid from 'material-ui/Grid';
+
 import Section from './Section';
 
 class Day extends Component {
 
   render() {
-    let sections = [];
-    for(var key in this.props.sections) {
-      if(this.props.sections.hasOwnProperty(key)) {
-        sections.push(<Section section={key} programs={this.props.sections[key]} />);
-      }
-    }
+    const sections = Object.keys(this.props.sections).sort();
+    const sectionSize = 12 / sections.length;
 
     return (
-      <div className="day">
-        <h3>{this.props.day}</h3>
-        { sections }
-      </div>
+      <Grid container gutter={0}>
+        <Grid item sm={ 12 } md={ 12 }>
+          <h3>{this.props.day}</h3>
+        </Grid>
+        {sections.map(section => (
+          <Grid item sm={ sectionSize } md={ sectionSize }>
+            <Section section={section} programs={this.props.sections[section]} />
+          </Grid>
+        ))}
+      </Grid>
     )
   }
 }

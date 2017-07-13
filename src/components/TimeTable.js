@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
+import Grid from 'material-ui/Grid';
+
 import Day from '../components/Day';
 
 class TimeTable extends Component {
 
   render() {
-    let days = [];
-    for(var key in this.props.programs) {
-      if(this.props.programs.hasOwnProperty(key)) {
-        days.push(<Day day={key} sections={this.props.programs[key]} />);
-      }
-    }
+    const days = Object.keys(this.props.programs).sort();
+    const itemSize = 12 / days.length;
 
     return (
-      <div className="timetable">
-        { days }
-      </div>
+      <Grid container gutter={8}>
+        {days.map(day => (
+          <Grid item sm={ itemSize } md={ itemSize }>
+            <Day day={day} sections={this.props.programs[day]} />
+          </Grid>
+        ))}
+      </Grid>
     )
   }
 }
