@@ -8,7 +8,7 @@ class Section extends Component {
       <div className="section">
         <h5>{this.props.section}</h5>
         {this.props.programs.map(p => (
-          <Program info={ p } />
+          <Program key={p.title} info={ p } />
         ))}
       </div>
     )

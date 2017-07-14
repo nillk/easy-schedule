@@ -15,8 +15,8 @@ class Day extends Component {
           <h3>{this.props.day}</h3>
         </Grid>
         {sections.map(section => (
-          <Grid item sm={ sectionSize } md={ sectionSize }>
-            <Section section={section} programs={this.props.sections[section]} />
+          <Grid item key={section} sm={ sectionSize } md={ sectionSize }>
+            <Section key={section} section={section} programs={this.props.sections[section]} />
           </Grid>
         ))}
       </Grid>

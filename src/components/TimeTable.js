@@ -12,8 +12,8 @@ class TimeTable extends Component {
     return (
       <Grid container gutter={8}>
         {days.map(day => (
-          <Grid item sm={ itemSize } md={ itemSize }>
-            <Day day={day} sections={this.props.programs[day]} />
+          <Grid item key={day} sm={ itemSize } md={ itemSize }>
+            <Day key={day} day={day} sections={this.props.programs[day]} />
           </Grid>
         ))}
       </Grid>
