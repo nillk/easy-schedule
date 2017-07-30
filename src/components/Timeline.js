@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { withStyles, createStyleSheet } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
+
+const TIME_HEIGHT = 72;
+const START_TIME = 9;
+
+const styleSheet = createStyleSheet('Timeline', theme => ({
+  time: {
+    fontSize: 14,
+    lineHeight: TIME_HEIGHT + 'px',
+    textAlign: 'center'
+  }
+}));
 
 class Timeline extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.TIME_HEIGHT = 72;
-    this.START_TIME = 9;
-  }
-
   render() {
     const height = 792; // FIXME
-    const timeSectionCount = Math.ceil(height / this.TIME_HEIGHT);
-    const timelines = Array(timeSectionCount).fill().map((_, idx) => this.START_TIME + idx);
+    const timeSectionCount = Math.ceil(height / TIME_HEIGHT);
+    const timelines = Array(timeSectionCount).fill().map((_, idx) => START_TIME + idx);
 
     const timeSectionStyle = {
       width: 24,
-      height: this.TIME_HEIGHT,
-      lineHeight: this.TIME_HEIGHT + 'px',
-      textAlign: 'center',
+      height: TIME_HEIGHT,
       borderBottom: '1px solid white'
     }
 
@@ -26,7 +32,7 @@ class Timeline extends Component {
       <div className="day-timeline">
         { timelines.map(time => (
           <div key={ time } style={ timeSectionStyle }>
-            { time }
+            <Typography type="subheading" className={ this.props.classes.time }>{ time }</Typography>
           </div>
         ))}
       </div>
@@ -34,4 +40,8 @@ class Timeline extends Component {
   }
 }
 
-export default Timeline;
+Timeline.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styleSheet)(Timeline);
