@@ -1,8 +1,36 @@
-html, body, #content, #content>div, .day, .section, .section-list {
+html, body, #content, #content>div, .timetable, .day, .section, .section-list {
+  height: 100%;
+}
+
+.timetable {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.timetable-day {
+  display: inline-block;
+  float: left;
+  height: 100%;
+}
+
+.day-timeline {
+  display: inline-block;
+  float: left;
+  width: 24px;
+  height: 100%;
+  background-color: #F2F2F2;
+  margin-top: 29.6px;
+  padding-top: 1px;
+}
+
+.day-section {
+  display: inline-block;
+  float: left;
   height: 100%;
 }
 
 .section {
+  width: 160px;
   border-right: 1px solid white;
 
   .section-list {

@@ -8,7 +8,7 @@ class Section extends Component {
     return (
       <div className="section">
         <Typography type="subheading" gutterBottom>{ this.props.section }</Typography>
-        <div className="section-list">
+        <div id="section-list" className="section-list">
           { this.props.programs.map(p => (
             <Program key={ p.title } info={ p } />
           )) }

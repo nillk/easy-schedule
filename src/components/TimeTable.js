@@ -10,13 +10,13 @@ class TimeTable extends Component {
     const itemSize = 12 / days.length;
 
     return (
-      <Grid container gutter={8} style={ {height: '100%'} }>
+      <div className="timetable">
         { days.map(day => (
-          <Grid item key={ day } sm={ itemSize } md={ itemSize }>
+          <div key={ day } className="timetable-day">
             <Day key={ day } day={ day } sections={ this.props.programs[day] } />
-          </Grid>
-        )) }
-      </Grid>
+          </div>
+        ))}
+      </div>
     )
   }
 }
